@@ -19,7 +19,7 @@ namespace Ventasl3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hola Mundo");
+            MessageBox.Show("La innovación es lo que distingue a un líder de un seguidor (Steve Jobs)");
         }
     }
 }
