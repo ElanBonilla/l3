@@ -63,5 +63,12 @@ namespace SistemaERP
             ReportePedidos.MdiParent = this;
             ReportePedidos.Show();
         }
+
+        private void inventariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Inventarios = new Inventarios();
+            Inventarios.MdiParent = this;
+            Inventarios.Show();
+        }
     }
 }

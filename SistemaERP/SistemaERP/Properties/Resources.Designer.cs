@@ -69,5 +69,15 @@ namespace SistemaERP.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_02_08_at_5_32_02_PM_1_ {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-02-08 at 5.32.02 PM(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
