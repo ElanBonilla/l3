@@ -49,6 +49,70 @@ namespace BL.ERP
             return ListaInventarios;
         }
 
+
+        public Resultado GuardarProducto(Inventario producto)
+        {
+            var resultado = Validar(producto);
+            if (resultado.Exitoso == false)
+            {
+                return resultado;
+
+            }
+
+            if (producto.Id==0)
+            {
+                producto.Id = ListaInventarios.Max(item => item.Id) + 1;      
+            }
+
+            resultado.Exitoso = true;
+            return resultado;
+        }
+
+        public void AgregarProducto()
+        {
+            var nuevoProducto = new Inventario();
+            ListaInventarios.Add(nuevoProducto);
+        }
+
+        public bool EliminarProducto (int id)
+        {
+            foreach (var item in ListaInventarios)
+            {
+                if (item.Id == id)
+                {
+                    ListaInventarios.Remove(item);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private Resultado Validar(Inventario producto)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+
+            if (string.IsNullOrEmpty (producto.Descripcion) == true)
+            {
+                resultado.Mensaje = "Ingrese una descripción";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.Existencia <0)
+            {
+                resultado.Mensaje = "La existencia es menor que cero";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.Precio <=0)
+            {
+                resultado.Mensaje = "El precio no puede ser menor o igual que cero";
+                resultado.Exitoso = false;
+            }
+
+            return resultado;
+        }
+
     }
 
     public class Inventario
@@ -58,5 +122,11 @@ namespace BL.ERP
         public double Precio { get; set; }
         public int Existencia { get; set; }
         public bool Activo { get; set; }
+    }
+
+    public class Resultado
+    {
+        public bool Exitoso { get; set; }
+        public string Mensaje { get; set; }
     }
 }
