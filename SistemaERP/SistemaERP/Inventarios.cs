@@ -37,6 +37,7 @@ namespace SistemaERP
             {
                 listaInventariosBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("Producto Guardado");
             }
             else
             {
