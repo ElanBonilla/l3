@@ -40,6 +40,11 @@ namespace SistemaERP
             usuario = textBox1.Text;
             contrasena = textBox2.Text;
 
+            button1.Enabled = false;
+            button1.Text = "Verificando ...";
+            Application.DoEvents();
+
+
             var resultado = _seguridad.Autorizar(usuario, contrasena);
 
             if (resultado == true)
@@ -47,11 +52,16 @@ namespace SistemaERP
                 this.Close();
 
             }
-           
+
             else
             {
                 MessageBox.Show("Usuario o Contraseña incorrecta");
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

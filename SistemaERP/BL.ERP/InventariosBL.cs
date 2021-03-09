@@ -20,11 +20,11 @@ namespace BL.ERP
 
 
         }
-        
+
         public BindingList<Inventario> ObtenerProductos()
         {
             _contexto.Productos.Load();
-            ListaInventarios = _contexto.Productos.Local.ToBindingList();        
+            ListaInventarios = _contexto.Productos.Local.ToBindingList();
             return ListaInventarios;
         }
 
@@ -50,7 +50,7 @@ namespace BL.ERP
             ListaInventarios.Add(nuevoProducto);
         }
 
-        public bool EliminarProducto (int id)
+        public bool EliminarProducto(int id)
         {
             foreach (var item in ListaInventarios)
             {
@@ -69,21 +69,34 @@ namespace BL.ERP
             var resultado = new Resultado();
             resultado.Exitoso = true;
 
-            if (string.IsNullOrEmpty (producto.Descripcion) == true)
+            if (string.IsNullOrEmpty(producto.Descripcion) == true)
             {
                 resultado.Mensaje = "Ingrese una descripción";
                 resultado.Exitoso = false;
             }
 
-            if (producto.Existencia <0)
+            if (producto.Existencia < 0)
             {
                 resultado.Mensaje = "La existencia es menor que cero";
                 resultado.Exitoso = false;
             }
 
-            if (producto.Precio <=0)
+            if (producto.Precio <= 0)
             {
                 resultado.Mensaje = "El precio no puede ser menor o igual que cero";
+                resultado.Exitoso = false;
+            }
+
+
+            if (producto.CategoriaID == 0)
+            {
+                resultado.Mensaje = "Seleccione una categoria";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.TipoId == 0)
+            {
+                resultado.Mensaje = "Seleccione un tipo";
                 resultado.Exitoso = false;
             }
 
@@ -98,10 +111,19 @@ namespace BL.ERP
         public string Descripcion { get; set; }
         public double Precio { get; set; }
         public int Existencia { get; set; }
-        public byte[] Foto { get; set; } 
+        public int CategoriaID { get; set; }
+        public Categoria Categoria { get; set; }
+        public int TipoId { get; set; }
+        public Tipo Tipo { get; set; }
+        public byte[] Foto { get; set; }
         public bool Activo { get; set; }
     }
 
+ /*     public Inventario()
+       {
+           Activo = true;
+       }
+   */ 
     public class Resultado
     {
         public bool Exitoso { get; set; }
