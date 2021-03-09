@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -117,11 +118,16 @@ namespace SistemaERP
             }
         }
 
+      
+
+
         private void cancelar_Click(object sender, EventArgs e)
         {
+            _productos.CancelarCambios();
             DeshabilitarHabilitarBotones(true);
-            Eliminar(0);
+            
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
