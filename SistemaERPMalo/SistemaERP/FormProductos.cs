@@ -12,14 +12,20 @@ using System.Windows.Forms;
 
 namespace SistemaERP
 {
-    public partial class Inventarios : Form
+    public partial class FormProductos : Form
     {
         InventariosBL _productos;
-        public Inventarios()
+        CategoriaBL _categorias;
+        TiposBL _tipos;
+        public FormProductos()
         {
             InitializeComponent();
             _productos = new InventariosBL();
             listaInventariosBindingSource.DataSource = _productos.ObtenerProductos();
+            _categorias = new CategoriaBL();
+            listaInventariosBindingSource.DataSource = _categorias.ObtenerCategorias();
+            _tipos = new TiposBL();
+            //listaTiposBindingSource.DataSource = _tipos.ObtenerTipos();
         }
 
         private void listaInventariosBindingNavigator_RefreshItems(object sender, EventArgs e)
@@ -41,6 +47,7 @@ namespace SistemaERP
             {
                 producto.Foto = null;
             }
+
 
             var resultado = _productos.GuardarProducto(producto);
             if(resultado.Exitoso == true )
@@ -78,10 +85,6 @@ namespace SistemaERP
             cancelar.Visible = !valor;
         }
 
-        private void Inventarios_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
@@ -122,15 +125,16 @@ namespace SistemaERP
         private void button1_Click(object sender, EventArgs e)
         {
             var producto = (Inventario)listaInventariosBindingSource.Current;
-            if (producto != null)
+            if(producto != null)
             {
                 openFileDialog1.ShowDialog();
                 var archivo = openFileDialog1.FileName;
 
                 if (archivo != "")
                 {
-                    var fileInfo = new FileInfo(archivo);
-                    var fileStream = fileInfo.OpenRead();
+                    var fileinfo = new FileInfo(archivo);
+                    var fileStream = fileinfo.OpenRead();
+
                     fotoPictureBox.Image = Image.FromStream(fileStream);
                 }
             }
@@ -138,13 +142,25 @@ namespace SistemaERP
             {
                 MessageBox.Show("Cree un producto antes de asignarle una imagen");
             }
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             fotoPictureBox.Image = null;
+
+        }
+
+
+
+
+
+        private void FormProductos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fotoPictureBox_Click(object sender, EventArgs e)
+        {
 
         }
     }

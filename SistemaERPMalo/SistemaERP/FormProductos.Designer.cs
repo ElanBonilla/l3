@@ -1,6 +1,6 @@
 ﻿namespace SistemaERP
 {
-    partial class Inventarios
+    partial class FormProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             System.Windows.Forms.Label existenciaLabel;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label precioLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             this.listaInventariosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.listaInventariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -73,7 +73,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(66, 241);
+            activoLabel.Location = new System.Drawing.Point(66, 323);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 1;
@@ -91,7 +91,7 @@
             // existenciaLabel
             // 
             existenciaLabel.AutoSize = true;
-            existenciaLabel.Location = new System.Drawing.Point(66, 198);
+            existenciaLabel.Location = new System.Drawing.Point(66, 280);
             existenciaLabel.Name = "existenciaLabel";
             existenciaLabel.Size = new System.Drawing.Size(58, 13);
             existenciaLabel.TabIndex = 5;
@@ -109,7 +109,7 @@
             // precioLabel
             // 
             precioLabel.AutoSize = true;
-            precioLabel.Location = new System.Drawing.Point(66, 162);
+            precioLabel.Location = new System.Drawing.Point(66, 244);
             precioLabel.Name = "precioLabel";
             precioLabel.Size = new System.Drawing.Size(40, 13);
             precioLabel.TabIndex = 9;
@@ -142,7 +142,7 @@
             this.listaInventariosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaInventariosBindingNavigator.Name = "listaInventariosBindingNavigator";
             this.listaInventariosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaInventariosBindingNavigator.Size = new System.Drawing.Size(724, 25);
+            this.listaInventariosBindingNavigator.Size = new System.Drawing.Size(725, 25);
             this.listaInventariosBindingNavigator.TabIndex = 0;
             this.listaInventariosBindingNavigator.Text = "bindingNavigator1";
             this.listaInventariosBindingNavigator.RefreshItems += new System.EventHandler(this.listaInventariosBindingNavigator_RefreshItems);
@@ -261,7 +261,7 @@
             // activoCheckBox
             // 
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaInventariosBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(138, 236);
+            this.activoCheckBox.Location = new System.Drawing.Point(138, 318);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
             this.activoCheckBox.TabIndex = 2;
@@ -278,7 +278,7 @@
             // existenciaTextBox
             // 
             this.existenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaInventariosBindingSource, "Existencia", true));
-            this.existenciaTextBox.Location = new System.Drawing.Point(138, 195);
+            this.existenciaTextBox.Location = new System.Drawing.Point(138, 277);
             this.existenciaTextBox.Name = "existenciaTextBox";
             this.existenciaTextBox.Size = new System.Drawing.Size(334, 20);
             this.existenciaTextBox.TabIndex = 6;
@@ -295,27 +295,28 @@
             // precioTextBox
             // 
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaInventariosBindingSource, "Precio", true));
-            this.precioTextBox.Location = new System.Drawing.Point(138, 159);
+            this.precioTextBox.Location = new System.Drawing.Point(138, 241);
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.Size = new System.Drawing.Size(334, 20);
             this.precioTextBox.TabIndex = 10;
             // 
             // fotoPictureBox
             // 
-            this.fotoPictureBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.fotoPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaInventariosBindingSource, "Foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.fotoPictureBox.Location = new System.Drawing.Point(526, 75);
+            this.fotoPictureBox.Location = new System.Drawing.Point(535, 85);
             this.fotoPictureBox.Name = "fotoPictureBox";
-            this.fotoPictureBox.Size = new System.Drawing.Size(142, 119);
+            this.fotoPictureBox.Size = new System.Drawing.Size(151, 113);
             this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fotoPictureBox.TabIndex = 12;
             this.fotoPictureBox.TabStop = false;
+            this.fotoPictureBox.Click += new System.EventHandler(this.fotoPictureBox_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(502, 231);
+            this.button1.Location = new System.Drawing.Point(504, 241);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 23);
+            this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 13;
             this.button1.Text = "Agregar Foto";
             this.button1.UseVisualStyleBackColor = true;
@@ -323,23 +324,23 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(610, 231);
+            this.button2.Location = new System.Drawing.Point(613, 241);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 23);
+            this.button2.Size = new System.Drawing.Size(89, 23);
             this.button2.TabIndex = 14;
-            this.button2.Text = "Remover";
+            this.button2.Text = "Remover Foto";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.Filter = "jpg, png | *.jpg; *.png";
+            this.openFileDialog1.Filter = "jpg, png | *.jpg; *png";
             // 
-            // Inventarios
+            // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 337);
+            this.ClientSize = new System.Drawing.Size(725, 772);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.fotoPictureBox);
@@ -354,9 +355,9 @@
             this.Controls.Add(precioLabel);
             this.Controls.Add(this.precioTextBox);
             this.Controls.Add(this.listaInventariosBindingNavigator);
-            this.Name = "Inventarios";
+            this.Name = "FormProductos";
             this.Text = "Inventarios";
-            this.Load += new System.EventHandler(this.Inventarios_Load);
+            this.Load += new System.EventHandler(this.FormProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listaInventariosBindingNavigator)).EndInit();
             this.listaInventariosBindingNavigator.ResumeLayout(false);
             this.listaInventariosBindingNavigator.PerformLayout();
