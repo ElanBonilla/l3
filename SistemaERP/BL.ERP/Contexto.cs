@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace BL.ERP
 {
-    public class Contexto : DbContext
+    public class Contexto: DbContext
     {
-        public Contexto() : base("Accesorios")
+        public Contexto(): base("Accesorios")
         {
 
         }

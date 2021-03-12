@@ -82,11 +82,11 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventarios.cs">
+    <Compile Include="Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventarios.Designer.cs">
-      <DependentUpon>Inventarios.cs</DependentUpon>
+    <Compile Include="Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedidos.cs">
       <SubType>Form</SubType>
@@ -114,8 +114,8 @@
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventarios.resx">
-      <DependentUpon>Inventarios.cs</DependentUpon>
+    <EmbeddedResource Include="Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,9 +128,11 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BL.ERP.CategoriaBL.datasource" />
     <None Include="Properties\DataSources\BL.ERP.Inventario.datasource" />
     <None Include="Properties\DataSources\BL.ERP.InventariosBL.datasource" />
     <None Include="Properties\DataSources\BL.ERP.SeguridadBL.datasource" />
+    <None Include="Properties\DataSources\BL.ERP.TiposBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

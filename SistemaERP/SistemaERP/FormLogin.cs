@@ -52,7 +52,7 @@ namespace SistemaERP
                 this.Close();
 
             }
-
+           
             else
             {
                 MessageBox.Show("Usuario o Contraseña incorrecta");
