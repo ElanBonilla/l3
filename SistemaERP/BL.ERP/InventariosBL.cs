@@ -44,18 +44,6 @@ namespace BL.ERP
             return resultado;
         }
 
-
-        public void CancelarCambios()
-        {
-            foreach (var item in _contexto.ChangeTracker.Entries())
-            {
-                item.State = EntityState.Unchanged;
-                item.Reload();
-            }
-
-        }
-
-
         public void AgregarProducto()
         {
             var nuevoProducto = new Inventario();
@@ -99,7 +87,7 @@ namespace BL.ERP
                 resultado.Exitoso = false;
             }
 
-
+/*
             if (producto.CategoriaID == 0)
             {
                 resultado.Mensaje = "Seleccione una categoria";
@@ -111,10 +99,10 @@ namespace BL.ERP
                 resultado.Mensaje = "Seleccione un tipo";
                 resultado.Exitoso = false;
             }
-
+            */
             return resultado;
         }
-
+        
     }
 
     public class Inventario

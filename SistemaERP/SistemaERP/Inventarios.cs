@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Entity;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,15 +15,11 @@ namespace SistemaERP
     public partial class Inventarios : Form
     {
         InventariosBL _productos;
-        TiposBL _tiposBL;
-
         public Inventarios()
         {
             InitializeComponent();
             _productos = new InventariosBL();
             listaInventariosBindingSource.DataSource = _productos.ObtenerProductos();
-            _tiposBL = new TiposBL();
-            listaTiposBindingSource.DataSource = _tiposBL.ObtenerTipos();
         }
 
         private void listaInventariosBindingNavigator_RefreshItems(object sender, EventArgs e)
@@ -118,16 +113,11 @@ namespace SistemaERP
             }
         }
 
-      
-
-
         private void cancelar_Click(object sender, EventArgs e)
         {
-            _productos.CancelarCambios();
             DeshabilitarHabilitarBotones(true);
-            
+            Eliminar(0);
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {

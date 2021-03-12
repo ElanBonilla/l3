@@ -66,9 +66,9 @@ namespace SistemaERP
 
         private void inventariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var FormProductos = new FormProductos();
-            FormProductos.MdiParent = this;
-            FormProductos.Show();
+            var FormInventario = new Inventario();
+            FormInventario.MdiParent = this;
+            FormInventario.Show();
         }
     }
 }

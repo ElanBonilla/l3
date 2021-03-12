@@ -88,12 +88,12 @@ namespace BL.ERP
             }
 
 
-            if (producto.CategoriaID == 0)
+        /*    if (producto.CategoriaID == 0)
             {
                 resultado.Mensaje = "Seleccione una categoria";
                 resultado.Exitoso = false;
             }
-
+*/
             if (producto.TipoId == 0)
             {
                 resultado.Mensaje = "Seleccione un tipo";
