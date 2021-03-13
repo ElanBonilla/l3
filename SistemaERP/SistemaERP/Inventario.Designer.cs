@@ -399,7 +399,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 564);
+            this.ClientSize = new System.Drawing.Size(688, 350);
             this.Controls.Add(categoriaIDLabel);
             this.Controls.Add(this.categoriaIDComboBox);
             this.Controls.Add(tipoIdLabel);
@@ -419,7 +419,7 @@
             this.Controls.Add(this.precioTextBox);
             this.Controls.Add(this.listaInventariosBindingNavigator);
             this.Name = "Inventario";
-            this.Text = "Inventario2";
+            this.Text = "Inventario";
             this.Load += new System.EventHandler(this.Inventario2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listaInventariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaInventariosBindingNavigator)).EndInit();

@@ -15,15 +15,15 @@ namespace SistemaERP
     public partial class Inventario : Form
     {
         InventariosBL _productos;
-       // CategoriaBL _categorias;
+        CategoriaBL _categorias;
         TiposBL _tipos;
         public Inventario()
         {
             InitializeComponent();
             _productos = new InventariosBL();
             listaInventariosBindingSource.DataSource = _productos.ObtenerProductos();
-           // _categorias = new CategoriaBL();
-           // listaInventariosBindingSource.DataSource = _categorias.ObtenerCategorias();
+            _categorias = new CategoriaBL();
+            listaCategoriasBindingSource.DataSource = _categorias.ObtenerCategorias();
             _tipos = new TiposBL();
             listaTiposBindingSource.DataSource = _tipos.ObtenerTipos();
         }

@@ -117,13 +117,15 @@ namespace BL.ERP
         public Tipo Tipo { get; set; }
         public byte[] Foto { get; set; }
         public bool Activo { get; set; }
+
+        public Inventario()
+        {
+            Activo = true;
+        }
     }
 
- /*  public Inventario()
-    {
-        Activo = true;
-    }
- */
+ 
+
     public class Resultado
     {
         public bool Exitoso { get; set; }
