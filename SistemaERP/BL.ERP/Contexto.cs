@@ -5,6 +5,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BL.ERP.FacturaBL;
 
 namespace BL.ERP
 {
@@ -22,7 +23,9 @@ namespace BL.ERP
         }
 
         public DbSet<Inventario> Productos { get; set; }
+        public DbSet<Factura> Factura { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Tipo> Tipos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
 

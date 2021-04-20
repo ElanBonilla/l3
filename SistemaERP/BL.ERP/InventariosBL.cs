@@ -69,6 +69,14 @@ namespace BL.ERP
             var resultado = new Resultado();
             resultado.Exitoso = true;
 
+            if (producto == null)
+            {
+                resultado.Mensaje = "Agregue un producto valido";
+                resultado.Exitoso = false;
+                return resultado;
+            }
+
+
             if (string.IsNullOrEmpty (producto.Descripcion) == true)
             {
                 resultado.Mensaje = "Ingrese una descripción";
@@ -88,12 +96,12 @@ namespace BL.ERP
             }
 
 
-        /*    if (producto.CategoriaID == 0)
+            if (producto.CategoriaID == 0)
             {
                 resultado.Mensaje = "Seleccione una categoria";
                 resultado.Exitoso = false;
             }
-*/
+
             if (producto.TipoId == 0)
             {
                 resultado.Mensaje = "Seleccione un tipo";

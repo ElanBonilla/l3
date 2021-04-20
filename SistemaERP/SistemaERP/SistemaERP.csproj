@@ -108,6 +108,9 @@
     <Compile Include="ReportesFacturas.Designer.cs">
       <DependentUpon>ReportesFacturas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Facturas.resx">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +132,8 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.ERP.CategoriaBL.datasource" />
+    <None Include="Properties\DataSources\BL.ERP.ClienteBL.datasource" />
+    <None Include="Properties\DataSources\BL.ERP.FacturaBL.datasource" />
     <None Include="Properties\DataSources\BL.ERP.Inventario.datasource" />
     <None Include="Properties\DataSources\BL.ERP.InventariosBL.datasource" />
     <None Include="Properties\DataSources\BL.ERP.SeguridadBL.datasource" />
